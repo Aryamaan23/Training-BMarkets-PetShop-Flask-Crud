@@ -20,7 +20,7 @@ def get_db_connection():
     conn = psycopg2.connect(host='localhost',
                             database='flask_db',
                             user='postgres',
-                            password='Finserv@2023')
+                            password='postgres')
     return conn
 #When we connect to a remote server 2 more things are required that is port=5432 and ip address
 
