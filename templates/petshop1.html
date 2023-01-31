@@ -1,0 +1,29 @@
+{% extends 'base_petshop.html' %}
+
+{% block content %}
+    <h1>{% block title %} Pets {% endblock %}</h1>
+   
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Owner</th>
+            <th>PetName</th>
+            <th>Pet Breed</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        {% for owner in owner_details %}
+        <tr>
+        <td>{{owner[0]}}</td>
+        <td>{{owner[1]}}</td>
+        <td>{{owner[2]}}</td>
+        <td>{{owner[3]}}</td>
+        <td><a href=" {{ url_for('delete', ids = owner[0])}}"><button>Delete</button></a></td>
+        <td><a href=" {{ url_for('edit', ids = owner[0])}}"><button>Edit</button></a></td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+             
+    
+{% endblock %}
