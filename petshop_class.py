@@ -7,7 +7,7 @@ conn = psycopg2.connect(
         host="localhost",
         database="flask_db",
         user='postgres',
-        password='Finserv@2023')
+        password='postgres')
 
 class Pet:
     def __init__(self,owner_name,pet_name,pet_type):
@@ -22,7 +22,7 @@ class DBConnection:
         pass
     @classmethod
     def conndb(self):
-        self.conn=psycopg2.connect("dbname=flask_db user=postgres password=Finserv@2023")
+        self.conn=psycopg2.connect("dbname=flask_db user=postgres password=postgres")
         self.curr=self.conn.cursor()
 
 
