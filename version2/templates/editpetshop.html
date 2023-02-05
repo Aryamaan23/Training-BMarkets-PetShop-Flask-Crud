@@ -1,0 +1,13 @@
+{% extends 'base_petshop.html' %}
+
+{% block content %}
+    <h1>{% block title %} Edit pet info {% endblock %}</h1>
+    <form method = "POST">
+        {# This hidden tag is for CSRF #}
+        {{ form.hidden_tag()}}
+        {{ form.name.label}} : {{form.name}} <br>
+        {{ form.pet_name.label }} : {{form.pet_name}} <br>
+        {{ form.pet_type.label }} : {{form.pet_type}} <br>
+        {{ form.submit() }}
+    </form>
+{% endblock %}
